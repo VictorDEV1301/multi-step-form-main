@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Multi step form main</title>
+</head>
+
+<body>
+  <main>
+    <section class="left">
+      <div class="background-left">
+        <ul>
+          <li class="step">
+            <h1 id="step-1">1</h1>
+            <div class="li-right">
+              <h3>STEP 1</h3>
+              <h2>YOUR INFO</h2>
+            </div>
+          </li>
+          <li class="step">
+            <h1 id="step-2">2</h1>
+            <div class="li-right">
+              <h3>STEP 2</h3>
+              <h2>SELECT PLAIN</h2>
+            </div>
+          </li>
+          <li class="step">
+            <h1 id="step-3">3</h1>
+            <div class="li-right">
+              <h3>STEP 3</h3>
+              <h2>ADD ONS</h2>
+            </div>
+          </li>
+          <li class="step">
+            <h1 id="step-4">4</h1>
+            <div class="li-right">
+              <h3>STEP 4</h3>
+              <h2>SUMARY</h2>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="right">
+      <form id="form-1">
+        <div class="right-text">
+          <h1>Personal info</h1>
+          <p>Please provide your name, email address, and phone number.</p>
+        </div>
+        <div class="form-step">
+          <label for="name">Name</label>
+          <input type="text" id="name" class="dados" placeholder="e.g. Stephen King" required>
+        </div>
+
+        <div class="form-step">
+          <label for="name">Email Addres</label>
+          <input type="email" id="name" class="dados" placeholder="e.g. stephenking@lorem.com" required>
+        </div>
+
+        <div class="form-step">
+          <label for="name">Phone Number</label>
+          <input type="text" id="name" class="dados" placeholder="e.g. +1 234 567 890" required>
+        </div>
+      </form>
+
+      <form id="form-2">
+        <div class="right-text">
+          <h1>Select your plan</h1>
+          <p>You have the option of monthly or yearly billing.</p>
+        </div>
+        <div class="container">
+          <div class="card">
+            <input type="radio" name="plan" id="plan-1">
+            <label for="plan-1">
+              <img src="./assets/icon-arcade.svg" alt="">
+              <div class="wrapper">
+                <h1>Arcade</h1>
+                <h3>$9/mo</h3>
+              </div>
+            </label>
+          </div>
+      
+          <div class="card">
+            <input type="radio" name="plan" id="plan-2">
+            <label for="plan-2">
+              <img src="./assets/icon-advanced.svg" alt="">
+              <div class="wrapper">
+                <h1>Advanced</h1>
+                <h3>$12/mo</h3>
+              </div>
+            </label>
+          </div>
+      
+          <div class="card">
+            <input type="radio" name="plan" id="plan-3">
+            <label for="plan-3">
+              <img src="./assets/icon-pro.svg" alt="">
+              <div class="wrapper">
+                <h1>Pro</h1>
+                <h3>$15/mo</h3>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="container-2">
+          <h1>Monthly</h1>
+          <div class="selector">
+            <div class="ball" id="ball"></div>
+          </div>
+          <h1>Yearly</h1>
+        </div>
+      </form>
+
+      <div class="buttons">
+        <button class="next-step" id="back-step">Go back</button>
+        <button class="next-step" id="next-step">Next Step</button>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
