@@ -69,8 +69,19 @@ function criaConclusao() {
 
   const preco = document.querySelector('#preco');
   const precoElement = document.querySelector('.card input[type="radio"]:checked + label h3');
-  preco.innerHTML = precoElement.textContent;
+  preco.innerHTML = precoElement.textContent.replace(/[^0-9]/g, "");
 
+  const adicionais = document.querySelectorAll('input[type="checkbox"]:checked + label > .wraper > h2');
+  const exibir = document.querySelector('#adicional');
+  const adicionaisPreco = document.querySelectorAll('input[type="checkbox"]:checked + label > p')
+  const exibirPreco = document.querySelector('#adicionalPreco');
+  exibir.innerHTML = '';
+  exibirPreco.innerHTML = '';
+  adicionais.forEach((valor,indice) => {
+    exibir.innerHTML += `${valor.textContent}</br>`;
+    exibirPreco.innerHTML += `${adicionaisPreco[indice].textContent}</br>`;
+  })
+  
   // .replace(/[^0-9]/g, "")
 }
 
