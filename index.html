@@ -47,78 +47,141 @@
     </section>
 
     <section class="right">
-      <form id="form-1">
-        <div class="right-text">
-          <h1>Personal info</h1>
-          <p>Please provide your name, email address, and phone number.</p>
-        </div>
-        <div class="form-step">
-          <label for="name">Name</label>
-          <input type="text" id="name" class="dados" placeholder="e.g. Stephen King" required>
-        </div>
+      <form>
+        <section class="form1">
+          <div class="right-text">
+            <h1>Personal info</h1>
+            <p>Please provide your name, email address, and phone number.</p>
+          </div>
 
-        <div class="form-step">
-          <label for="name">Email Addres</label>
-          <input type="email" id="name" class="dados" placeholder="e.g. stephenking@lorem.com" required>
-        </div>
+          <div class="form-step">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="dados" placeholder="e.g. Stephen King" required>
+            <p class="error"></p>
+          </div>
 
-        <div class="form-step">
-          <label for="name">Phone Number</label>
-          <input type="text" id="name" class="dados" placeholder="e.g. +1 234 567 890" required>
-        </div>
-      </form>
+          <div class="form-step">
+            <label for="email">Email Addres</label>
+            <input type="email" id="email" class="dados" placeholder="e.g. stephenking@lorem.com" required>
+            <p class="error"></p>
+          </div>
 
-      <form id="form-2">
-        <div class="right-text">
-          <h1>Select your plan</h1>
-          <p>You have the option of monthly or yearly billing.</p>
-        </div>
-        <div class="container">
-          <div class="card">
-            <input type="radio" name="plan" id="plan-1">
-            <label for="plan-1">
-              <img src="./assets/icon-arcade.svg" alt="">
-              <div class="wrapper">
-                <h1>Arcade</h1>
-                <h3>$9/mo</h3>
+          <div class="form-step">
+            <label for="number">Phone Number</label>
+            <input type="text" id="number" class="dados" placeholder="e.g. +1 234 567 890" required>
+            <p class="error"></p>
+          </div>
+        </section>
+
+        <section class="form2">
+          <div class="right-text">
+            <h1>Select your plan</h1>
+            <p>You have the option of monthly or yearly billing.</p>
+          </div>
+
+          <div class="container">
+            <div class="card">
+              <input type="radio" name="plan" id="plan-1" checked>
+              <label for="plan-1">
+                <img src="./assets/icon-arcade.svg" alt="">
+                <div class="wrapper">
+                  <h1 id='arcade'>Arcade</h1>
+                  <h3>$9/mo</h3>
+                </div>
+              </label>
+            </div>
+
+            <div class="card">
+              <input type="radio" name="plan" id="plan-2">
+              <label for="plan-2">
+                <img src="./assets/icon-advanced.svg" alt="">
+                <div class="wrapper">
+                  <h1>Advanced</h1>
+                  <h3>$12/mo</h3>
+                </div>
+              </label>
+            </div>
+
+            <div class="card">
+              <input type="radio" name="plan" id="plan-3">
+              <label for="plan-3">
+                <img src="./assets/icon-pro.svg" alt="">
+                <div class="wrapper">
+                  <h1>Pro</h1>
+                  <h3>$15/mo</h3>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="container-2">
+            <h1>Monthly</h1>
+            <div class="selector">
+              <div class="ball" id="ball"></div>
+            </div>
+            <h1>Yearly</h1>
+          </div>
+
+        </section>
+
+        <section class="form3">
+          <div class="right-text">
+            <h1>Pick add-ons</h1>
+            <p>Add-ons help enchance your gaming experience</p>
+          </div>
+
+          <div class="container-card">
+            <input type="checkbox" id="online">
+            <label for="online">
+              <div class="wraper">
+                <h2>Online service</h2>
+                <p>Acess to multiplayer games</p>
               </div>
+              <p id="price">+1/mo</p>
             </label>
           </div>
-      
-          <div class="card">
-            <input type="radio" name="plan" id="plan-2">
-            <label for="plan-2">
-              <img src="./assets/icon-advanced.svg" alt="">
-              <div class="wrapper">
-                <h1>Advanced</h1>
-                <h3>$12/mo</h3>
-              </div>
-            </label>
-          </div>
-      
-          <div class="card">
-            <input type="radio" name="plan" id="plan-3">
-            <label for="plan-3">
-              <img src="./assets/icon-pro.svg" alt="">
-              <div class="wrapper">
-                <h1>Pro</h1>
-                <h3>$15/mo</h3>
-              </div>
-            </label>
-          </div>
-        </div>
 
-        <div class="container-2">
-          <h1>Monthly</h1>
-          <div class="selector">
-            <div class="ball" id="ball"></div>
+          <div class="container-card">
+            <input type="checkbox" id="larger">
+            <label for="larger">
+              <div class="wraper">
+                <h2>Larger Storage</h2>
+                <p>Extra 1TB cloud save</p>
+              </div>
+              <p>+2/mo</p>
+            </label>
           </div>
-          <h1>Yearly</h1>
-        </div>
+
+          <div class="container-card">
+            <input type="checkbox" id="customizable">
+            <label for="customizable">
+              <div class="wraper">
+                <h2>Customizable profile</h2>
+                <p>Custom theme on yout profile</p>
+              </div>
+              <p>+2/mo</p>
+            </label>
+          </div>
+        </section>
+
+        <section class="form4">
+          <div class="right-text">
+            <h1>Finishing up</h1>
+            <p>Double-check everything looks OK before confirming</p>
+          </div>
+
+          <div class="plano">
+            <h1 id="plano"></h1>
+            <h1 id="preco"></h1>
+          </div>
+
+          <div class="adicionais">
+          </div>
+        </section>
       </form>
 
       <div class="buttons">
-        <button class="next-step" id="back-step">Go back</button>
+        <button class="back-step" id="back-step">Go back</button>
         <button class="next-step" id="next-step">Next Step</button>
       </div>
 

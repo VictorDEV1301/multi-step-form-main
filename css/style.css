@@ -84,7 +84,7 @@ main {
   width: 500px;
 }
 
-.right form {
+.right section {
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -108,15 +108,9 @@ main {
   border-radius: 5px;
 }
 
-.next-step {
-  cursor: pointer;
-  padding: 15px;
-  color: #e5e5e5;
-  background-color: #00f;
-  border-radius: 5px;
-}
-
-#form-2 {
+form .form2,
+form .form3,
+form .form4 {
   display: none;
 }
 
@@ -124,11 +118,29 @@ main {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  position: relative;
 }
 
-#back-step {
+.next-step {
+  cursor: pointer;
+  padding: 15px;
+  color: #e5e5e5;
+  background-color: #00f;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+  bottom: 15px;
+}
+
+.back-step {
+  cursor: pointer;
+  padding: 15px;
+  position: absolute;
+  left: 0;
+  color: #888;
   background-color: transparent;
+  display: none;
+  bottom: 15px;
 }
 
 .card label {
@@ -152,7 +164,7 @@ main {
   display: none;
 }
 
-.card p{
+.card p {
   font-size: 10px;
   margin-top: 5px;
   color: red;
@@ -187,4 +199,61 @@ main {
   height: 20px;
   border-radius: 50%;
   background-color: #fff;
+}
+
+.error {
+  color: red;
+  font-size: 10px;
+}
+
+.form3 label {
+  width: 100%;
+  height: 15%;
+  border: 1px solid black;
+  padding: 10px 25px;
+  padding-left: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.container-card {
+  position: relative;
+}
+
+#online,
+#larger,
+#customizable {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+}
+
+#online:checked+label,
+#larger:checked+label,
+#customizable:checked+label {
+  border: 2px solid #00f;
+}
+
+.card input[type="radio"]:checked + label h1{
+  color: #00f;
+}
+
+.plano{
+  display: flex;
+  justify-content: space-between;
+  background-color: #ccc;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.adicionais{
+  display: flex;
+  justify-content: space-between;
+  background-color: #ccc;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 15px;
 }
