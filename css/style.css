@@ -252,7 +252,7 @@ form .form4 {
   border-radius: 15px;
 }
 
-.adicionais{
+.adicionais, .total{
   display: flex;
   justify-content: space-between;
   background-color: #ccc;
@@ -260,6 +260,13 @@ form .form4 {
   border-radius: 15px;
   margin-top: 15px;
 }
+
+.total p{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
 
 @media screen and (max-width: 1024px) {
   *{

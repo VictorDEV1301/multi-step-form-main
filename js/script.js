@@ -68,8 +68,14 @@ function criaConclusao() {
   plano.innerHTML = planoElement.textContent;
 
   const preco = document.querySelector('#preco');
-  const precoElement = document.querySelector('.card input[type="radio"]:checked + label h3');
-  preco.innerHTML = precoElement.textContent.replace(/[^0-9]/g, "");
+  let precoElement = document.querySelector('.card input[type="radio"]:checked + label h3');
+  precoElement = precoElement.textContent.replace(/[^0-9]/g, '');
+
+  if (Number(precoElement) > 50) {
+    preco.innerHTML = `$${precoElement}/yr`;
+  } else {
+    preco.innerHTML = `$${precoElement}/mo`;
+  }
 
   const adicionais = document.querySelectorAll('input[type="checkbox"]:checked + label > .wraper > h2');
   const exibir = document.querySelector('#adicional');
@@ -77,12 +83,39 @@ function criaConclusao() {
   const exibirPreco = document.querySelector('#adicionalPreco');
   exibir.innerHTML = '';
   exibirPreco.innerHTML = '';
-  adicionais.forEach((valor,indice) => {
+  adicionais.forEach((valor, indice) => {
     exibir.innerHTML += `${valor.textContent}</br>`;
     exibirPreco.innerHTML += `${adicionaisPreco[indice].textContent}</br>`;
   })
-  
-  // .replace(/[^0-9]/g, "")
+
+  valorTotal(adicionaisPreco, precoElement);
+}
+
+function valorTotal(adicionaisPreco, precoElement) {
+  const total = document.querySelector('.total');
+  total.innerHTML = '';
+  const totalp = document.createElement('p');
+
+  const valorTotal = (valor = 0) => {
+    adicionaisPreco.forEach(valorAdicional => {
+      valor += Number(valorAdicional.textContent.replace(/[^0-9]/g, ''));
+    })
+    if (Number(precoElement) > 50) valor *= 10;
+    valor += Number(precoElement);
+    return valor;
+  }
+
+  const exibirTotal = document.createElement('p');
+  exibirTotal.innerHTML = 'Total';
+
+  if (valorTotal() > 50) {
+    totalp.innerHTML = `$${valorTotal()}/yr`;
+  } else {
+    totalp.innerHTML = `$${valorTotal()}/mo`;
+  }
+
+  total.appendChild(exibirTotal);
+  total.appendChild(totalp);
 }
 
 let formExibido = 0;
@@ -97,9 +130,9 @@ document.addEventListener('click', e => {
       mudaFormulario(formExibido);
       mudaStep(formExibido);
 
-      if(formExibido === 3) criaConclusao();
+      if (formExibido === 3) criaConclusao();
     }
- 
+
   };
 
   if (e.target.id === 'back-step') {
